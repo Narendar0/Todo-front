@@ -7,7 +7,7 @@ function Addtask(props) {
         if(task.trim() === ''){   //removes white space in font and back
             return 
         } else {
-            axios.post('http://localhost:8000/api/tasks' , {
+            axios.post('https://todo-app-cap.herokuapp.com/api/tasks' , {
                 todo : task,
                 isComplete : false
             }).then(res => {

@@ -14,7 +14,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/tasks').then(res => {
+    axios.get('https://todo-app-cap.herokuapp.com/api/tasks').then(res => {
       setTodolist(res.data)
     }).catch(err => console.log(err))
   },[])
