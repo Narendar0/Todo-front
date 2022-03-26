@@ -7,7 +7,7 @@ function Addtask(props) {
         if(task.trim() === ''){
             return 
         } else {
-            axios.post('http://localhost:8000/api/tasks' , {
+            axios.post('https://cap-todo-list-app.herokuapp.com/api/tasks' , {
                 todo : task,
                 isComplete : false
             }).then(res => {
