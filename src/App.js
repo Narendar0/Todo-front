@@ -4,17 +4,12 @@ import './App.css'
 import Addtask from './Components/Addtask'
 import Todolist from './Components/Todolist'
 import Updatetask from './Components/Updatetask'
-
-
 function App() {
   const [todolist,setTodolist] = useState([])
   const [tasktoUpdate , setTasktoUpdate] = useState({})
   const [showPopup,setShowPopup] = useState(false)
-
-
-
   useEffect(() => {
-    axios.get('https://todo-app-cap.herokuapp.com/api/tasks').then(res => {
+    axios.get('https://cap-todo-list.herokuapp.com/api/tasks').then(res => {
       setTodolist(res.data)
     }).catch(err => console.log(err))
   },[])
@@ -43,9 +38,6 @@ function App() {
     })
     setTodolist(newList)
   }
-
-
-
   return (
     <div>
       <Addtask addTask = {addTask}/>
@@ -54,8 +46,5 @@ function App() {
     </div>
   )
 }
-
-
-
 
 export default App
