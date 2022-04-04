@@ -7,14 +7,14 @@ import axios from 'axios'
 function Todolist(props) {
     const todolist = props.todolist.map((task,index) => {
         const taskComplete = task => {
-            axios.put(`https://cap-todo-list-app.herokuapp.com/api/tasks/${task._id}` , {
+            axios.put(`http://localhost:8000/api/tasks/${task._id}` , {
                 _id : task._id,
                 todo: task.todo,
                 isComplete : !task.isComplete
             }).then(res => props.taskComplete(res.data)).catch(err => console.log(err))
         }
         const removeTask = id => {
-            axios.delete(`https://cap-todo-list-app.herokuapp.com/api/tasks/${id}`).then(res => props.removeTask(res.data)).catch(err => console.log(err))
+            axios.delete(`http://localhost:8000/api/tasks/${id}`).then(res => props.removeTask(res.data)).catch(err => console.log(err))
         } 
         return <li key = {index}>
             <div style = {{display : 'flex'}}>
